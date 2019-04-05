@@ -8,8 +8,8 @@ const Block = require('./Block.js');
 let myBlockChain = new BlockChain.Blockchain();
 
 setTimeout(function () {
-	console.log("Waiting...")
-}, 10000);
+	console.log("Waiting...");
+}, 5000);
 
 /******************************************
  ** Function for Create Tests Blocks   ****
@@ -25,7 +25,7 @@ setTimeout(function () {
 			i++;
 			if (i < 10) theLoop(i);
 		});
-	}, 10000);
+	}, 5000);
   })(0);
 
 
@@ -38,7 +38,7 @@ setTimeout(function () {
 myBlockChain.getBlockHeight().then((height) => {
 	console.log(height);
 }).catch((err) => { console.log(err);});
-*/
+
 
 /***********************************************
  ******** Function to Get a Block  *************
@@ -49,7 +49,7 @@ myBlockChain.getBlockHeight().then((height) => {
 myBlockChain.getBlock(0).then((block) => {
 	console.log(JSON.stringify(block));
 }).catch((err) => { console.log(err);});
-*?
+
 
 /***********************************************
  ***************** Validate Block  *************
@@ -63,7 +63,7 @@ myBlockChain.validateBlock(0).then((valid) => {
 .catch((error) => {
 	console.log(error);
 })
-*/
+
 
 /** Tampering a Block this is only for the purpose of testing the validation methods */
 /*

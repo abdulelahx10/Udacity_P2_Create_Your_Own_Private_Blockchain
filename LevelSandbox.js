@@ -18,13 +18,14 @@ class LevelSandbox {
             self.db.get(key, (err, value) => {
                 if (err) {
                     if (err.type == 'NotFoundError') {
+                        console.log('No block found', err);
                         resolve(undefined);
                     } else {
                         console.log('Block ' + key + ' get failed', err);
                         reject(err);
                     }
                 } else {
-                    resolve(value);
+                    resolve(JSON.parse(value));
                 }
             });
         });
@@ -60,7 +61,7 @@ class LevelSandbox {
                     reject(err);
                 })
                 .on('close', function () {
-                    console.log('Block #' + i);
+                    //console.log('Block #' + i);
                     resolve(i);
                 });
         });
